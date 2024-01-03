@@ -24,5 +24,16 @@ public class Reply {
     private Comment comment;
 
 
+    public Reply(Comment comment, Long userId, String replyText) {
+        this.comment = comment;
+
+        // Correct the parameter name to match the field name
+        this.user = new User();
+        this.user.setId(userId);
+
+        this.replyText = replyText;
+    }
+
+
 }
 
