@@ -3,8 +3,10 @@ package com.example.MyBlog.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @Entity
+@RequiredArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 public class Like {
@@ -22,5 +24,15 @@ public class Like {
     private Comment comment;
 
 
+    public Like(Comment comment, Long userId) {
+        this.comment = comment;
+        this.user = new User();
+        this.user.setId(userId);
+    }
+
+    public Like(Post post, Long userId) {
+        this.user = new User();
+        this.user.setId(userId);
+    }
 }
 
