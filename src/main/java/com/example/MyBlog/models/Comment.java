@@ -3,14 +3,12 @@ package com.example.MyBlog.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.hibernate.grammars.hql.HqlParser;
+
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.*;
-import lombok.*;
 
-import java.time.LocalDateTime;
+
 import java.util.List;
 
 @Entity
@@ -41,4 +39,6 @@ public class Comment {
     private List<Like> likes;
 
 
+    public Comment(Post post, Long userId, String text) {
+    }
 }
