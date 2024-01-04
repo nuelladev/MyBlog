@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 @Service
 @RequiredArgsConstructor
 public class FileService {
-    private final Path root = Paths.get("./uploads");
+    private final Path root = Paths.get("./src/main/resources/uploads");
 
     public void init() {
         try {

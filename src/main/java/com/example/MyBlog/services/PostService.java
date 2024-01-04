@@ -28,15 +28,19 @@ public class PostService {
     }
 
     public Post savePost(Post post) {
+        if (post.getUser() == null) {
+            throw new IllegalArgumentException("Post must have a user.");
+        }
+
         if (post.getId() == null) {
             post.setCreatedAt(LocalDateTime.now());
         }
         post.setUpdatedAt(LocalDateTime.now());
+
         return postRepository.save(post);
     }
 
     public void deletePost(Post post) {
         postRepository.delete(post);
     }
-
 }

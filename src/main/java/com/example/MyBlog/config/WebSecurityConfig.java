@@ -27,8 +27,8 @@ public class WebSecurityConfig {
                         .loginProcessingUrl("/login")
                         .usernameParameter("email")
                         .passwordParameter("password")
-                        //.defaultSuccessURL("/")
-                        //.failureURL("/login?error")
+                        .defaultSuccessUrl("/")
+                        .failureUrl("/login?error")
                         .permitAll()
                 );
 

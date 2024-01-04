@@ -2,7 +2,6 @@ package com.example.MyBlog.models;
 
 
 
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import jakarta.persistence.*;
@@ -33,9 +32,9 @@ public class Post {
 
     String imageFilePath;
 
-    @NotNull
+
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_post_user"))
     User user;
 
 }

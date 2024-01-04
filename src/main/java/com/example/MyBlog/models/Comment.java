@@ -36,7 +36,7 @@ public class Comment {
     private List<Reply> replies;
 
     @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL)
-    private List<Like> likes;
+    private List<reactor> likes;
 
 
     public Comment(Post post, Long userId, String text) {
